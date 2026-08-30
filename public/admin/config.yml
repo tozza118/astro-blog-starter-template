@@ -1,0 +1,32 @@
+backend:
+  name: github
+  repo: tozza118/astro-blog-starter-template  
+  branch: main
+
+# Where images uploaded via CMS are stored and how Astro references them
+media_folder: "public/images"
+public_folder: "/images"
+
+collections:
+  # Blog Posts Collection
+  - name: "blog"
+    label: "Blog Posts"
+    folder: "src/content/blog"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Publish Date", name: "pubDate", widget: "datetime" }
+      - { label: "Description", name: "description", widget: "text" }
+      - { label: "Body", name: "body", widget: "markdown" }
+
+  # Patient Information Pages Collection
+  - name: "patient_info"
+    label: "Patient Info Pages"
+    folder: "src/content/patients"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Page Title", name: "title", widget: "string" }
+      - { label: "Last Updated", name: "updatedDate", widget: "datetime" }
+      - { label: "Content", name: "body", widget: "markdown" }
